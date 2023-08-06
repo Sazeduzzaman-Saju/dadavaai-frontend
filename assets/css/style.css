@@ -24,6 +24,7 @@
      src: url(../fonts/Krinkes/KrinkesRegularPERSONAL.ttf);
  }
  
+ @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
  /*****************************
  ** GENERAL STYLES
  ******************************/
@@ -36,6 +37,16 @@
      font-size: 15px;
      line-height: 24px;   
  }
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 11111;
+	background: url('https://i.ibb.co/NL3yXDf/ezgif-com-video-to-gif.gif') 50% 50% 
+                no-repeat white;
+}
  .theme-container{
      padding-left: 0;
      padding-right: 0;

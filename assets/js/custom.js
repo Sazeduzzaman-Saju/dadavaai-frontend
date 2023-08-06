@@ -1,3 +1,7 @@
+$(window).load(function(){
+    $('.loader').fadeOut(3000);
+});
+
 // Form  Validation
 $(document).ready(function () {
     // Function to check if all required fields are filled
