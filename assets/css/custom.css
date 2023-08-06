@@ -573,27 +573,6 @@ h2.company-tab-title {
     font-style: italic;
     font-weight: 300;
   }
-  .owl-nav {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-  }
-  .owl-prev {
-    background: #ef4416;
-    padding: 10px;
-    color: white;
-    text-transform: capitalize;
-    margin-right: 1rem;
-    padding: 10px 25px;
-  }
-
-  .owl-next {
-    background: #ef4416;
-    padding: 10px;
-    color: white;
-    text-transform: capitalize;
-    padding: 10px 25px;
-  }
   .map-area {
     display: flex;
     justify-content: center;
@@ -982,27 +961,7 @@ height: 406px !important;
     border-left: 3px solid rgb(244, 141, 53);
     margin-bottom: 0px;
   }
-  .owl-nav {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-  }
-  .owl-prev {
-    background: #ef4416;
-    padding: 10px;
-    color: white;
-    text-transform: capitalize;
-    margin-right: 1rem;
-    padding: 10px 25px;
-  }
 
-  .owl-next {
-    background: #ef4416;
-    padding: 10px;
-    color: white;
-    text-transform: capitalize;
-    padding: 10px 25px;
-  }
 
   .line-shape {
 padding: 0px 20px;

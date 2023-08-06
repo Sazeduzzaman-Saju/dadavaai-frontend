@@ -714,11 +714,11 @@
      text-transform: uppercase;
  }
  .logo-area {
-     padding: 33px 0;
+     padding: 22px 0;
  }
  
  .header-link-search:hover {
-     color: white;
+     color: #ef4416;
  }
  
  .goshop-menu {
@@ -787,16 +787,32 @@
      position: absolute;
      z-index: 999;
      border-radius: 3px;
-     top: 44px;
-     left: -50%;
+     right: -50%;
      visibility: hidden;
      opacity: 0;
      transform: translateY(50px);
      transition: opacity 0.1s ease 0s, transform 0.1s ease 0s, visibility 0.1s linear 0s;
- 
      background: white;
      width: 300px;
      padding: 30px;
+     text-transform: none;
+     border: 1px solid #eee;
+     border-top: 0;
+ }
+
+ .user-view,
+ .nav-dropdown ul {
+     position: absolute;
+     z-index: 999;
+     border-radius: 3px;
+     right: -50%;
+     visibility: hidden;
+     opacity: 0;
+     transform: translateY(50px);
+     transition: opacity 0.1s ease 0s, transform 0.1s ease 0s, visibility 0.1s linear 0s;
+     background: white;
+     width: 200px;
+     padding: 10px;
      text-transform: none;
      border: 1px solid #eee;
      border-top: 0;
@@ -5298,8 +5314,9 @@
      }
  
      .cartView {
-         left: -90%;
-         width: 280px;
+         width: 195px;
+    z-index: 1054;
+    position: absolute;
      }
      .cartView::before{
          background: transparent;
