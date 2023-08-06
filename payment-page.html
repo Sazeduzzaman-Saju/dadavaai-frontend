@@ -1,0 +1,4062 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--[if IE
+      ]><meta http-equiv="X-UA-Compatible" content="IE=edge"
+    /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Goshop HTML Theme || Payment</title>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="assets/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link rel="shortcut icon" href="assets/ico/favicon.ico" />
+
+    <!-- CSS Global -->
+    <link
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/plugins/bootstrap-select-1.9.3/dist/css/bootstrap-select.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/plugins/owl-carousel2/assets/owl.carousel.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/plugins/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/plugins/royalslider/skins/universal/rs-universal.css"
+      rel="stylesheet"
+    />
+    <link href="assets/plugins/royalslider/royalslider.css" rel="stylesheet" />
+    <link
+      href="assets/plugins/subscribe-better-master/subscribe-better.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Icons Font CSS -->
+    <link
+      href="assets/plugins/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Theme CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/header.css" rel="stylesheet" type="text/css" />
+    <style>
+      .badge {
+        padding: 1px 9px 2px;
+        font-size: 12.025px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #ffffff;
+        background-color: #70b9c5;
+        -webkit-border-radius: 9px;
+        -moz-border-radius: 9px;
+        border-radius: 9px;
+      }
+      .badge:hover {
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .badge-error {
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        background-color: #d43836;
+      }
+      .badge-error:hover {
+        background-color: #953b39;
+      }
+      .badge-warning {
+        background-color: #f89406;
+      }
+      .badge-warning:hover {
+        background-color: #c67605;
+      }
+      .badge-success {
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        background-color: #51d753;
+      }
+      .badge-success:hover {
+        background-color: #356635;
+      }
+      .badge-info {
+        background-color: #3a87ad;
+      }
+      .badge-info:hover {
+        background-color: #2d6987;
+      }
+      .badge-inverse {
+        background-color: #333333;
+      }
+      .badge-inverse:hover {
+        background-color: #1a1a1a;
+      }
+      .payment-page-top .submit {
+        background: #ef4416 none repeat scroll 0 0;
+        border: 0 none;
+        border-radius: 3px;
+        color: #ffffff;
+        font-size: 17px;
+        height: 23px;
+        line-height: 0;
+        padding-bottom: 5px;
+        padding-top: 4px;
+        width: 28px;
+        transition: all 0.2s ease-in 0s;
+        -webkit-transition: all 0.2s ease-in 0s;
+      }
+      .payment-page-top .submit2 {
+        background: #51a5cb none repeat scroll 0 0;
+        border: 0 none;
+        border-radius: 3px;
+        color: #ffffff;
+        font-size: 17px;
+        height: 23px;
+        line-height: 0;
+        padding-bottom: 5px;
+        padding-top: 4px;
+        width: 28px;
+        transition: all 0.2s ease-in 0s;
+        -webkit-transition: all 0.2s ease-in 0s;
+      }
+      .payment_modal_area {
+        display: flex;
+        justify-content: center;
+      }
+      /* For Tooltip */
+      /* START TOOLTIP STYLES */
+      [tooltip] {
+        position: relative; /* opinion 1 */
+      }
+
+      /* Applies to all tooltips */
+      [tooltip]::before,
+      [tooltip]::after {
+        text-transform: none; /* opinion 2 */
+        font-size: 0.9em; /* opinion 3 */
+        line-height: 1;
+        user-select: none;
+        pointer-events: none;
+        position: absolute;
+        display: none;
+        opacity: 0;
+      }
+      [tooltip]::before {
+        content: "";
+        border: 5px solid transparent; /* opinion 4 */
+        z-index: 1001; /* absurdity 1 */
+      }
+      [tooltip]::after {
+        content: attr(tooltip); /* magic! */
+
+        /* most of the rest of this is opinion */
+        font-family: Helvetica, sans-serif;
+        text-align: center;
+
+        /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+        min-width: 3em;
+        max-width: 21em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 1ch 1.5ch;
+        border-radius: 0.3ch;
+        box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+        background: #333;
+        color: #fff;
+        z-index: 1000; /* absurdity 2 */
+      }
+
+      /* Make the tooltips respond to hover */
+      [tooltip]:hover::before,
+      [tooltip]:hover::after {
+        display: block;
+      }
+
+      /* don't show empty tooltips */
+      [tooltip=""]::before,
+      [tooltip=""]::after {
+        display: none !important;
+      }
+
+      /* FLOW: UP */
+      [tooltip]:not([flow])::before,
+      [tooltip][flow^="up"]::before {
+        bottom: 100%;
+        border-bottom-width: 0;
+        border-top-color: #333;
+      }
+      [tooltip]:not([flow])::after,
+      [tooltip][flow^="up"]::after {
+        bottom: calc(100% + 5px);
+      }
+      [tooltip]:not([flow])::before,
+      [tooltip]:not([flow])::after,
+      [tooltip][flow^="up"]::before,
+      [tooltip][flow^="up"]::after {
+        left: 50%;
+        transform: translate(-50%, -0.5em);
+      }
+
+      /* FLOW: DOWN */
+      [tooltip][flow^="down"]::before {
+        top: 100%;
+        border-top-width: 0;
+        border-bottom-color: #333;
+      }
+      [tooltip][flow^="down"]::after {
+        top: calc(100% + 5px);
+      }
+      [tooltip][flow^="down"]::before,
+      [tooltip][flow^="down"]::after {
+        left: 50%;
+        transform: translate(-50%, 0.5em);
+      }
+
+      /* KEYFRAMES */
+      @keyframes tooltips-vert {
+        to {
+          opacity: 0.9;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      @keyframes tooltips-horz {
+        to {
+          opacity: 0.9;
+          transform: translate(0, -50%);
+        }
+      }
+
+      /* FX All The Things */
+      [tooltip]:not([flow]):hover::before,
+      [tooltip]:not([flow]):hover::after,
+      [tooltip][flow^="up"]:hover::before,
+      [tooltip][flow^="up"]:hover::after {
+        animation: tooltips-vert 300ms ease-out forwards;
+      }
+      .payment_content-area {
+        padding: 2rem;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      .v-tabs .nav-tabs > li {
+        display: block;
+        float: none;
+        border-radius: 0;
+      }
+
+      .v-tabs .nav-tabs > li,
+      .v-tabs .nav-tabs > li.active {
+        z-index: 1;
+      }
+
+      .v-tabs .nav-tabs > li > a,
+      .v-tabs .nav-tabs > li.active > a,
+      .v-tabs .nav-tabs > li > a:focus,
+      .v-tabs .nav-tabs > li > a:hover,
+      .v-tabs .nav-tabs > li.active > a:focus,
+      .v-tabs .nav-tabs > li.active > a:hover {
+        border: 0px solid;
+        border-radius: 0;
+      }
+
+      .v-tabs .nav-tabs > li.active > a,
+      .v-tabs .nav-tabs > li > a:focus,
+      .v-tabs .nav-tabs > li > a:hover {
+        position: relative;
+        background-color: #ef4416;
+        color: white;
+        z-index: 1;
+        border: none;
+      }
+
+      .v-tabs .tab-content {
+        background-color: lightblue;
+        flex: 1;
+      }
+
+      /* Payment */
+      :root {
+        --field-border: 1px solid #eeeeee;
+        --accent-color: #2962ff;
+        --sidebar-color: #f1f1f1;
+        --secondary-text: #aaaaaa;
+        --radius-sm: 0.25em;
+        --radius-md: 0.5em;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .flex {
+        display: flex;
+      }
+      .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .flex-fill {
+        display: flex;
+        flex: 1 1;
+      }
+      .flex-vertical {
+        display: flex;
+        flex-direction: column;
+      }
+      .flex-vertical-center {
+        display: flex;
+        align-items: center;
+      }
+      .flex-between {
+        display: flex;
+        justify-content: space-between;
+      }
+      .p-sm {
+        padding: 0.5em;
+      }
+      .pl-sm {
+        padding-left: 0.5em;
+      }
+      .pr-sm {
+        padding-right: 0.5em;
+      }
+      .pb-sm {
+        padding-bottom: 0.5em;
+      }
+      .p-md {
+        padding: 1em;
+      }
+      .pb-md {
+        padding-bottom: 1em;
+      }
+      .m-md {
+        margin: 1em;
+      }
+      .size-md {
+        font-size: 0.85em;
+      }
+      .size-lg {
+        font-size: 1.5em;
+      }
+      .size-xl {
+        font-size: 2em;
+      }
+      .half-width {
+        width: 50%;
+      }
+
+      .pointer {
+        cursor: pointer;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+      .ellipsis {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .f-main-color {
+        color: #2962ff;
+      }
+      .f-secondary-color {
+        color: var(--secondary-text);
+      }
+      .b-main-color {
+        background: var(--accent-color);
+      }
+      .numbers::-webkit-outer-spin-button,
+      .numbers::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .popup {
+        position: relative;
+        width: 50em;
+        background: #ffffff;
+      }
+      .popup .close-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: #fcfcfc;
+        border-bottom-left-radius: var(--radius-sm);
+        transition: background-color 0.25s ease-in-out;
+      }
+      .popup .close-btn:hover {
+        background: #ef5350;
+      }
+
+      .sidebar {
+        width: 16.5em;
+        padding-left: 2em;
+        padding-top: 5em;
+      }
+
+      .header .title {
+        font-size: 1.2em;
+      }
+      .header .title span {
+        font-weight: 300;
+      }
+
+      .card-data > div {
+        padding-bottom: 1em;
+      }
+      .card-data > div:first-child {
+        padding-top: 1em;
+      }
+
+      .card-property-title {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1;
+        margin-right: 0.5em;
+      }
+      .card-property-title strong {
+        padding-bottom: 0.5em;
+        font-size: 0.85em;
+      }
+      .card-property-title span {
+        color: var(--secondary-text);
+        font-size: 0.75em;
+      }
+      .card-property-value {
+        flex: 1 1;
+      }
+
+      .card-number {
+        background: #fafafa;
+        border: var(--field-border);
+        border-radius: var(--radius-md);
+        padding: 0.5em 1em;
+      }
+      .card-number-field * {
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+      }
+      .card-number-field input {
+        width: 3em;
+        height: 100%;
+        padding: 0.5em 0;
+        margin: 0 0.75em;
+        border: none;
+        color: #888888;
+        background: transparent;
+        text-align: center;
+        font-family: inherit;
+        font-weight: 500;
+      }
+
+      .timer span {
+        background: #311b92;
+        color: #ffffff;
+        width: 1.2em;
+        padding: 4px 0;
+        display: inline-block;
+        text-align: center;
+        border-radius: var(--radius-sm);
+      }
+      .timer span + span {
+        margin-left: 2px;
+      }
+      .timer em {
+        font-style: normal;
+      }
+      .input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 3em;
+        overflow: hidden;
+        border: var(--field-border);
+        border-radius: var(--radius-md);
+      }
+      .input-container input,
+      .input-container i {
+        line-height: 1;
+      }
+      .input-container input {
+        flex: 1 1;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        border: none;
+        border-radius: var(--radius-md);
+        font-family: inherit;
+        font-weight: 800;
+        font-size: 0.85em;
+      }
+      .input-container input:focus {
+        background: #e3f2fd;
+        color: #283593;
+      }
+      .input-container input::placeholder {
+        color: #ddd;
+      }
+      .input-container input::-webkit-outer-spin-button,
+      .input-container input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .input-container i {
+        position: absolute;
+        right: 0.5em;
+      }
+
+      .purchase-section {
+        position: relative;
+        overflow: visible;
+        padding: 0 1em 1em 1em;
+        background: var(--sidebar-color);
+        border-top-left-radius: 0.8em;
+        border-top-right-radius: 0.8em;
+      }
+      .purchase-section:before {
+        content: "";
+        position: absolute;
+        width: 1.6em;
+        height: 1.6em;
+        border-radius: 50%;
+        left: -0.8em;
+        bottom: -0.8em;
+        background: #ffffff;
+      }
+      .purchase-section:after {
+        content: "";
+        position: absolute;
+        width: 1.6em;
+        height: 1.6em;
+        border-radius: 50%;
+        right: -0.8em;
+        bottom: -0.8em;
+        background: #ffffff;
+      }
+
+      .card-mockup {
+        position: relative;
+        margin: -5em 1em 1.5em 1em;
+        padding: 1.5em 1.2em;
+        height: 10em;
+        border-radius: var(--radius-md);
+        background: #ffffff;
+        box-shadow: 0 0.5em 1em 0.125em rgba(0, 0, 0, 0.1);
+      }
+      .card-mockup:after {
+        content: "";
+        position: absolute;
+        width: 25%;
+        top: -0.2em;
+        left: 37.5%;
+        height: 0.2em;
+        background: var(--accent-color);
+        border-top-left-radius: 0.2em;
+        border-top-right-radius: 0.2em;
+      }
+      .card-mockup:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 25%;
+        left: 37.5%;
+        height: 0.5em;
+        background: #2962ff36;
+        border-bottom-left-radius: 0.2em;
+        border-bottom-right-radius: 0.2em;
+        box-shadow: 0 2px 15px 5px #2962ff4d;
+      }
+
+      .purchase-props {
+        margin: 0;
+        padding: 0;
+        font-size: 0.8em;
+        width: 100%;
+      }
+      .purchase-props li {
+        width: 100%;
+        line-height: 2.5;
+      }
+      .purchase-props li span {
+        color: var(--secondary-text);
+        font-weight: 600;
+      }
+
+      .separation-line {
+        border-top: 1px dashed #aaa;
+        margin: 0 0.8em;
+      }
+
+      .total-section {
+        position: relative;
+        overflow: hidden;
+
+        padding: 1em;
+        background: var(--sidebar-color);
+        border-bottom-left-radius: 0.8em;
+        border-bottom-right-radius: 0.8em;
+      }
+      .total-section:before {
+        content: "";
+        position: absolute;
+        width: 1.6em;
+        height: 1.6em;
+        border-radius: 50%;
+        left: -0.8em;
+        top: -0.8em;
+        background: #ffffff;
+      }
+      .total-section:after {
+        content: "";
+        position: absolute;
+        width: 1.6em;
+        height: 1.6em;
+        border-radius: 50%;
+        right: -0.8em;
+        top: -0.8em;
+        background: #ffffff;
+      }
+      .total-label {
+        font-size: 0.8em;
+        padding-bottom: 0.5em;
+      }
+      .total-section strong {
+        font-size: 1.5em;
+        font-weight: 800;
+      }
+      .total-section small {
+        font-weight: 600;
+      }
+      @media (max-width: 991px) {
+        .responsive > thead th {
+          display: none;
+        }
+        .responsive > tbody td,
+        .responsive > tbody th {
+          display: block;
+        }
+        .responsive > tbody > tr:nth-child(even) td,
+        .responsive > tbody > tr:nth-child(even) th {
+          background-color: #eee;
+        }
+        [row-header] {
+          position: relative;
+          width: 50%;
+          vertical-align: middle;
+        }
+        [row-header]:before {
+          content: attr(row-header);
+          display: inline-block;
+          vertical-align: middle;
+          text-align: left;
+          width: 50%;
+          padding-right: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body class="single single-product woocommerce woocommerce-page">
+    <!-- HEADER -->
+    <header id="masthead" class="clearfix">
+      <div class="site-subheader site-header">
+        <div class="container theme-container">
+          <!-- Language & Currency Switcher -->
+          <ul class="pull-left list-unstyled list-inline">
+            <li class="nav-dropdown language-switcher">
+              <div>Hot Line : +880 1533351286</div>
+            </li>
+          </ul>
+
+          <!-- Mini Cart -->
+          <ul class="pull-right list-unstyled list-inline">
+            <li id="cartContent" class="cartContent">
+              <a id="miniCartDropdown" href="cart.html">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span
+                  class="cart-item-num wht-clr"
+                  style="background-color: #ef4416"
+                  >5</span
+                >
+              </a>
+
+              <div id="miniCartView" class="cartView">
+                <ul
+                  id="minicartHeader"
+                  class="product_list_widget list-unstyled"
+                >
+                  <li>
+                    <div class="media clearfix">
+                      <div class="media-lefta">
+                        <a href="single-product.html">
+                          <img
+                            src="assets/img/products/cart-popup-1.jpg"
+                            alt="hoodie_5_front"
+                          />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <a href="single-product.html">Flusas Feminin</a>
+                        <span class="price"
+                          ><span class="amount"
+                            ><span class="fa fa-dollar"></span>20.00</span
+                          ></span
+                        >
+                        <span class="quantity">Qty: 1Pcs</span>
+                      </div>
+                    </div>
+
+                    <div class="product-remove">
+                      <a href="#" class="btn-remove" title="Remove this item"
+                        ><i class="fa fa-close"></i
+                      ></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media clearfix">
+                      <div class="media-lefta">
+                        <a href="single-product.html">
+                          <img
+                            src="assets/img/products/cart-popup-2.jpg"
+                            alt="T_2_front"
+                          />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <a href="single-product.html">Autum Winter</a>
+                        <span class="price"
+                          ><span class="amount"
+                            ><span class="fa fa-dollar"></span>20.00</span
+                          ></span
+                        >
+                        <span class="quantity">Qty: 1Pcs</span>
+                      </div>
+                    </div>
+
+                    <div class="product-remove">
+                      <a href="#" class="btn-remove" title="Remove this item"
+                        ><i class="fa fa-close"></i
+                      ></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media clearfix">
+                      <div class="media-lefta">
+                        <a href="single-product.html">
+                          <img
+                            src="assets/img/products/cart-popup-3.jpg"
+                            alt="cd_6_angle"
+                          />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <a href="single-product.html">Women's Summer</a>
+                        <span class="price"
+                          ><span class="amount"
+                            ><span class="fa fa-dollar"></span>20.00</span
+                          ></span
+                        >
+                        <span class="quantity">Qty: 1Pcs</span>
+                      </div>
+                    </div>
+
+                    <div class="product-remove">
+                      <a href="#" class="btn-remove" title="Remove this item"
+                        ><i class="fa fa-close"></i
+                      ></a>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="cartActions">
+                  <span class="pull-left">Subtotal</span>
+                  <span class="pull-right"
+                    ><span class="amount"
+                      ><span class="fa fa-dollar"></span>75.00</span
+                    ></span
+                  >
+                  <div class="clearfix"></div>
+
+                  <div class="minicart-buttons">
+                    <div class="col-lg-6">
+                      <a href="cart.html">Your Cart</a>
+                    </div>
+                    <div class="col-lg-6">
+                      <a href="checkout.html" class="minicart-checkout"
+                        >Checkout</a
+                      >
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="cartContent" class="cartContent">
+              <a id="miniCartDropdown" href="cart.html">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span
+                  class="cart-item-num wht-clr"
+                  style="background-color: #ef4416"
+                  >3</span
+                >
+              </a>
+
+              <div id="miniCartView" class="cartView">
+                <ul
+                  id="minicartHeader"
+                  class="product_list_widget list-unstyled"
+                >
+                  <li>
+                    <div class="media clearfix">
+                      <div class="media-lefta">
+                        <a href="single-product.html">
+                          <img
+                            src="assets/img/products/cart-popup-1.jpg"
+                            alt="hoodie_5_front"
+                          />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <a href="single-product.html">Flusas Feminin</a>
+                        <span class="price"
+                          ><span class="amount"
+                            ><span class="fa fa-dollar"></span>20.00</span
+                          ></span
+                        >
+                        <span class="quantity">Qty: 1Pcs</span>
+                      </div>
+                    </div>
+
+                    <div class="product-remove">
+                      <a href="#" class="btn-remove" title="Remove this item"
+                        ><i class="fa fa-close"></i
+                      ></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media clearfix">
+                      <div class="media-lefta">
+                        <a href="single-product.html">
+                          <img
+                            src="assets/img/products/cart-popup-2.jpg"
+                            alt="T_2_front"
+                          />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <a href="single-product.html">Autum Winter</a>
+                        <span class="price"
+                          ><span class="amount"
+                            ><span class="fa fa-dollar"></span>20.00</span
+                          ></span
+                        >
+                        <span class="quantity">Qty: 1Pcs</span>
+                      </div>
+                    </div>
+
+                    <div class="product-remove">
+                      <a href="#" class="btn-remove" title="Remove this item"
+                        ><i class="fa fa-close"></i
+                      ></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media clearfix">
+                      <div class="media-lefta">
+                        <a href="single-product.html">
+                          <img
+                            src="assets/img/products/cart-popup-3.jpg"
+                            alt="cd_6_angle"
+                          />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <a href="single-product.html">Women's Summer</a>
+                        <span class="price"
+                          ><span class="amount"
+                            ><span class="fa fa-dollar"></span>20.00</span
+                          ></span
+                        >
+                        <span class="quantity">Qty: 1Pcs</span>
+                      </div>
+                    </div>
+
+                    <div class="product-remove">
+                      <a href="#" class="btn-remove" title="Remove this item"
+                        ><i class="fa fa-close"></i
+                      ></a>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="cartActions">
+                  <span class="pull-left">Subtotal</span>
+                  <span class="pull-right"
+                    ><span class="amount"
+                      ><span class="fa fa-dollar"></span>75.00</span
+                    ></span
+                  >
+                  <div class="clearfix"></div>
+
+                  <div class="minicart-buttons">
+                    <div class="col-lg-6">
+                      <a href="cart.html">Your Cart</a>
+                    </div>
+                    <div class="col-lg-6">
+                      <a href="checkout.html" class="minicart-checkout"
+                        >Checkout</a
+                      >
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-dropdown">
+              <a href="#">Login<span class="text-danger">/</span>Register</a>
+              <ul class="nav-dropdown-inner list-unstyled accnt-list">
+                <li><a href="my-account.html">My Account</a></li>
+                <li><a href="account-info.html"> Account Information </a></li>
+                <li><a href="cng-pw.html">Change Password</a></li>
+                <li><a href="address-book.html">Address Books</a></li>
+                <li><a href="order-history.html">Order History</a></li>
+                <li><a href="review-rating.html">Reviews and Ratings</a></li>
+                <li><a href="return.html">Returns Requests</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+                <li><a href="myaccount-leftsidebar.html">Left Sidebar</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header-wrap" id="typo-sticky-header">
+        <div class="container theme-container reltv-div">
+          <div class="pull-right header-search visible-xs">
+            <a
+              id="open-popup-menu"
+              class="nav-trigger header-link-search"
+              href="javascript:void(0)"
+              title="Menu"
+            >
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2 col-sm-3">
+              <div class="top-header pull-left">
+                <div class="logo-area">
+                  <a href="index.html" class="thm-logo fsz-35">
+                    <img
+                      src="https://i.ibb.co/BzqxBRh/dadavaai.png"
+                      alt="Goshop HTML Theme"
+                    />
+                    <!-- <b class="bold-font-3 blk-clr">Dada</b>
+                        <span class="thm-clr funky-font">Vaai</span> -->
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Navigation -->
+
+            <div class="col-md-10 col-sm-10 static-div">
+              <div class="navigation pull-left">
+                <nav>
+                  <div id="primary-navigation">
+                    <ul class="nav navbar-nav primary-navbar pull-right">
+                      <li class="dropdown active">
+                        <a href="index.html">Home</a>
+                      </li>
+
+                      <li class="dropdown mega-dropdown">
+                        <a
+                          href="#"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          >Brands</a
+                        >
+                        <div
+                          class="dropdown-menu mega-dropdown-menu pr"
+                          style="padding-right: unset"
+                        >
+                          <div
+                            class="col-lg-3 col-md-3 col-sm-12 menu-block"
+                            style="background: #f7f5f5; border-radius: 5px"
+                          >
+                            <!-- Tab Trigger Area -->
+                            <div class="sub-list pt-1">
+                              <ul class="navss">
+                                <li
+                                  class="text-center mb-5 active"
+                                  style="
+                                    margin-bottom: 5px;
+                                    border: #999 1px solid;
+                                    border-radius: 5px;
+                                  "
+                                >
+                                  <a data-toggle="tab" href="#home"
+                                    >Arts, Crafts &amp; Gifts</a
+                                  >
+                                </li>
+                                <li
+                                  class="text-center mb-5"
+                                  style="
+                                    margin-bottom: 5px;
+                                    border: #999 1px solid;
+                                    border-radius: 5px;
+                                  "
+                                >
+                                  <a data-toggle="tab" href="#menu1">Menu 1</a>
+                                </li>
+                                <li
+                                  class="text-center mb-5"
+                                  style="
+                                    margin-bottom: 5px;
+                                    border: #999 1px solid;
+                                    border-radius: 5px;
+                                  "
+                                >
+                                  <a data-toggle="tab" href="#menu2">Menu 2</a>
+                                </li>
+                              </ul>
+                              <div
+                                class="gst-promo-text text-center"
+                                style="
+                                  margin-bottom: 5px;
+                                  position: relative;
+                                  left: 27%;
+                                  margin-top: -20px;
+                                "
+                              >
+                                <div>
+                                  <div class="vertical-align-text">
+                                    <a
+                                      href="https://www.jaragroups.com/all-brands"
+                                      class="fancy-btn fancy-btn-small mb-1"
+                                      >All Brands</a
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Tab Content Area -->
+                          <div class="col-lg-9 col-md-9 col-sm-12 menu-block">
+                            <div class="tab-content">
+                              <div id="home" class="tab-pane fade in active">
+                                <a href="">
+                                  <div
+                                    class="col-lg-2 col-md-3 col-sm-3 menu-block mb-3"
+                                    style="padding: 5px"
+                                  >
+                                    <div
+                                      class="sub-list text-center"
+                                      style="height: 120px"
+                                    >
+                                      <div
+                                        class="menu-card"
+                                        style="
+                                          border: #999 1px solid;
+                                          border-radius: 5px;
+                                        "
+                                      >
+                                        <img
+                                          src="https://www.jaragroups.com/storage/images/brand/download1614496759.png"
+                                          height="100%"
+                                          width="100%"
+                                          alt="5Star"
+                                          style="padding: 10px"
+                                        />
+                                      </div>
+                                      <div>
+                                        <h5 class="fsz-10 mt-20">59Star</h5>
+                                      </div>
+                                      <br />
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div id="menu1" class="tab-pane fade">
+                                <a href="">
+                                  <div
+                                    class="col-lg-2 col-md-3 col-sm-3 menu-block mb-3"
+                                    style="padding: 5px"
+                                  >
+                                    <div
+                                      class="sub-list text-center"
+                                      style="height: 120px"
+                                    >
+                                      <div
+                                        class="menu-card"
+                                        style="
+                                          border: #999 1px solid;
+                                          border-radius: 5px;
+                                        "
+                                      >
+                                        <img
+                                          src="https://www.jaragroups.com/storage/images/brand/download1614496759.png"
+                                          height="100%"
+                                          width="100%"
+                                          alt="5Star"
+                                          style="padding: 10px"
+                                        />
+                                      </div>
+                                      <div>
+                                        <h5 class="fsz-10 mt-20">54Star</h5>
+                                      </div>
+                                      <br />
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div id="menu2" class="tab-pane fade">
+                                <a href="">
+                                  <div
+                                    class="col-lg-2 col-md-3 col-sm-3 menu-block mb-3"
+                                    style="padding: 5px"
+                                  >
+                                    <div
+                                      class="sub-list text-center"
+                                      style="height: 120px"
+                                    >
+                                      <div
+                                        class="menu-card"
+                                        style="
+                                          border: #999 1px solid;
+                                          border-radius: 5px;
+                                        "
+                                      >
+                                        <img
+                                          src="https://www.jaragroups.com/storage/images/brand/download1614496759.png"
+                                          height="100%"
+                                          width="100%"
+                                          alt="5Star"
+                                          style="padding: 10px"
+                                        />
+                                      </div>
+                                      <div>
+                                        <h5 class="fsz-10 mt-20">51Star</h5>
+                                      </div>
+                                      <br />
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="dropdown mega-dropdown">
+                        <a
+                          href="#"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          >Countries</a
+                        >
+                        <div
+                          class="dropdown-menu mega-dropdown-menu mega-styl2"
+                          style="background: white; width: 25%; right: 180px"
+                        >
+                          <div class="col-sm-10 menu-block">
+                            <div class="sub-list">
+                              <ul>
+                                <li>
+                                  <a href="#"> Bangladesh </a>
+                                </li>
+                                <li>
+                                  <a href="#"> India </a>
+                                </li>
+                                <li>
+                                  <a href="#"> Pakisthan </a>
+                                </li>
+                                <a
+                                  href="#/all-countries"
+                                  class="btn btn-sm btn-danger text-center"
+                                  >All countries</a
+                                >
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="dropdown mega-dropdown">
+                        <a
+                          href="#"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          >Offers</a
+                        >
+                        <div
+                          class="dropdown-menu mega-dropdown-menu pr"
+                          style="padding-right: unset"
+                        >
+                          <div
+                            class="col-lg-3 col-md-3 col-sm-12 menu-block"
+                            style="background: #f7f5f5; border-radius: 5px"
+                          >
+                            <!-- Tab Trigger Area -->
+                            <div class="sub-list pt-1">
+                              <ul class="navsss">
+                                <li class="mb-5 active">
+                                  <a data-toggle="tab" href="#home2"
+                                    >Arts, Crafts &amp; Gifts</a
+                                  >
+                                </li>
+                                <li class="mb-5">
+                                  <a data-toggle="tab" href="#offer-menu1"
+                                    >Offer Menu 1</a
+                                  >
+                                </li>
+                                <li class="mb-5">
+                                  <a data-toggle="tab" href="#offer-menu2"
+                                    >Menu 2</a
+                                  >
+                                </li>
+                                <!-- extra -->
+                                <!-- <li  class=" mb-5">
+                                    <a data-toggle="tab" href="#offer-menu2">Menu 2</a>
+                                  </li>
+                                  <li  class=" mb-5">
+                                    <a data-toggle="tab" href="#offer-menu2">Menu 2</a>
+                                  </li>
+                                  <li  class=" mb-5">
+                                    <a data-toggle="tab" href="#offer-menu2">Menu 2</a>
+                                  </li>
+                                  <li  class=" mb-5">
+                                    <a data-toggle="tab" href="#offer-menu2">Menu 2</a>
+                                  </li>
+                                  <li  class=" mb-5">
+                                    <a data-toggle="tab" href="#offer-menu2">Menu 2</a>
+                                  </li>
+                                  <li  class=" mb-5">
+                                    <a data-toggle="tab" href="#offer-menu2">Menu 2</a>
+                                  </li> -->
+                              </ul>
+                              <div
+                                class="gst-promo-text"
+                                style="
+                                  margin-bottom: 5px;
+                                  position: relative;
+                                  left: 27%;
+                                  margin-top: -20px;
+                                "
+                              >
+                                <div>
+                                  <div class="vertical-align-text">
+                                    <a
+                                      href="https://www.jaragroups.com/all-brands"
+                                      class="fancy-btn fancy-btn-small mb-1"
+                                      >All Brands</a
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Tab Content Area -->
+                          <div class="col-lg-9 col-md-9 col-sm-12 menu-block">
+                            <div class="tab-content">
+                              <div id="home2" class="tab-pane fade in active">
+                                <a href="">
+                                  <div
+                                    class="col-lg-12 col-md-3 col-sm-3 menu-block mb-3"
+                                    style="padding: 5px"
+                                  >
+                                    <div
+                                      class="sub-list text-center"
+                                      style="height: 120px"
+                                    >
+                                      <div id="deals-show">
+                                        <div class="row">
+                                          <div
+                                            class="col-lg-3 col-md-3 col-sm-3 mb-6"
+                                          >
+                                            <ul>
+                                              <li class="blk-clr text-center">
+                                                Arts, Crafts &amp; Gifts
+                                              </li>
+                                              <li
+                                                role="separator"
+                                                class="divider"
+                                              ></li>
+                                              <a
+                                                href="https://www.jaragroups.com/product/873/book-300"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    Book - 300..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                            </ul>
+                                          </div>
+                                          <div
+                                            class="col-lg-3 col-md-3 col-sm-3 mb-6"
+                                          >
+                                            <ul>
+                                              <li class="blk-clr text-center">
+                                                Books &amp; Stationery
+                                              </li>
+                                              <li
+                                                role="separator"
+                                                class="divider"
+                                              ></li>
+                                              <a
+                                                href="https://www.jaragroups.com/product/553/faber-castell-goldber-pencil-3b"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    Faber Castell G..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                              <a
+                                                href="https://www.jaragroups.com/product/554/faber-castell-goldber-pencil-4b"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    Faber Castell G..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                            </ul>
+                                          </div>
+                                          <div
+                                            class="col-lg-3 col-md-3 col-sm-3 mb-6"
+                                          >
+                                            <ul>
+                                              <li class="blk-clr text-center">
+                                                Electronics &amp; Accessories
+                                              </li>
+                                              <li
+                                                role="separator"
+                                                class="divider"
+                                              ></li>
+                                              <a
+                                                href="https://www.jaragroups.com/product/56/worlds-lightest-bike"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    World's Lightes..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                            </ul>
+                                          </div>
+                                          <div
+                                            class="col-lg-3 col-md-3 col-sm-3 mb-6"
+                                          >
+                                            <ul>
+                                              <li class="blk-clr text-center">
+                                                Health &amp; Beauties
+                                              </li>
+                                              <li
+                                                role="separator"
+                                                class="divider"
+                                              ></li>
+                                              <a
+                                                href="https://www.jaragroups.com/product/291/sea-fennel-bath-salts"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    Sea Fennel Bath..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                              <a
+                                                href="https://www.jaragroups.com/product/292/bushukan-body-wash"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    Bushukan Body W..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                              <a
+                                                href="https://www.jaragroups.com/product/298/blue-tansy-clarity-mask"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    Blue Tansy Clar..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                              <a
+                                                href="https://www.jaragroups.com/product/300/self-care-essentials-set"
+                                              >
+                                                <li>
+                                                  <i
+                                                    class="fa fa-circle fsz-8"
+                                                    aria-hidden="true"
+                                                  ></i>
+                                                  &nbsp;
+                                                  <span class="fsz-12">
+                                                    Self-Care Essen..(10%)
+                                                  </span>
+                                                </li>
+                                              </a>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                          <div
+                                            class="col-lg-12 col-md-12 col-sm-12"
+                                          >
+                                            <img
+                                              class="ml-10"
+                                              src="https://www.jaragroups.com/storage/images/banner/menu-img11600924580.jpg"
+                                              alt="banner-category-page"
+                                              width="100%;"
+                                              height="200px;"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div id="offer-menu1" class="tab-pane fade">
+                                <a href="">
+                                  <div
+                                    class="col-lg-2 col-md-3 col-sm-3 menu-block mb-3"
+                                    style="padding: 5px"
+                                  >
+                                    <div
+                                      class="sub-list text-center"
+                                      style="height: 120px"
+                                    >
+                                      dafasdasd
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div id="offer-menu2" class="tab-pane fade">
+                                <a href="">
+                                  <div
+                                    class="col-lg-2 col-md-3 col-sm-3 menu-block mb-3"
+                                    style="padding: 5px"
+                                  >
+                                    <div
+                                      class="sub-list text-center"
+                                      style="height: 120px"
+                                    >
+                                      dafasd
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="dropdown">
+                        <a
+                          href="#"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                          >Help</a
+                        >
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="https://www.jaragroups.com/order-track">
+                              Track Order
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://www.jaragroups.com/compare">
+                              My Comapres
+                            </a>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <a href="https://www.jaragroups.com/all-faqs">
+                              Help &amp; FAQ</a
+                            >
+                          </li>
+                          <li>
+                            <a href="https://www.jaragroups.com/terms-policies">
+                              Terms &amp; Policies
+                            </a>
+                          </li>
+                          <li role="separator" class="divider"></li>
+                          <li>
+                            <a href="https://www.jaragroups.com/contact-form">
+                              Contact Us
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://www.jaragroups.com/about">
+                              About Us
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="contact-us.html">Blogs</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav primary-navbar pull-left">
+                      <li
+                        class="dropdown mega-dropdown"
+                        style="background: #dedcdb"
+                      >
+                        <a
+                          href="#"
+                          class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          role="button"
+                          aria-haspopup="true"
+                        >
+                          <i class="fa fa-list-ul thm-clr"></i>
+                          <span class="thm-clr">All Categories</span>
+                        </a>
+                        <div
+                          class="dropdown-menu mega-dropdown-menu"
+                          style="width: 316px; border: 1px solid #ef4416"
+                        >
+                          <div class="col-lg-12 col-md-12 col-sm-12 menu-block">
+                            <div class="sub-list">
+                              <ul>
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Yarn_64px1589177829.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/1/arts-crafts-gifts?category_id=1"
+                                    data-id="1"
+                                    dada-slug="arts-crafts-gifts"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >Arts, Crafts &amp; Gifts</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Arts
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/1?category_id=1&amp;subcategory_id=1&amp;minicategory_id=1"
+                                              >
+                                                Arts
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/2?category_id=1&amp;subcategory_id=1&amp;minicategory_id=2"
+                                              >
+                                                Paints
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/1/arts?category_id=1&amp;subcategory_id=1"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Crafts
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/3?category_id=1&amp;subcategory_id=2&amp;minicategory_id=3"
+                                              >
+                                                Handicrafts
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/2/crafts?category_id=1&amp;subcategory_id=2"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Gifts
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/4?category_id=1&amp;subcategory_id=3&amp;minicategory_id=4"
+                                              >
+                                                Cards
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/5?category_id=1&amp;subcategory_id=3&amp;minicategory_id=5"
+                                              >
+                                                Gifts
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/3/gifts?category_id=1&amp;subcategory_id=3"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Books_64px1589177852.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/2/books-stationery?category_id=2"
+                                    data-id="2"
+                                    dada-slug="books-stationery"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >Books &amp; Stationery</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Books
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/7?category_id=2&amp;subcategory_id=4&amp;minicategory_id=7"
+                                              >
+                                                Histroy &amp; Religion
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/8?category_id=2&amp;subcategory_id=4&amp;minicategory_id=8"
+                                              >
+                                                Biography
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/9?category_id=2&amp;subcategory_id=4&amp;minicategory_id=9"
+                                              >
+                                                Science &amp; Technology
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/4/books?category_id=2&amp;subcategory_id=4"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Stationery
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/100?category_id=2&amp;subcategory_id=27&amp;minicategory_id=100"
+                                              >
+                                                School &amp; Office Stationery
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/27/stationery?category_id=2&amp;subcategory_id=27"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Computer_64px1589177867.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/3/electronics-accessories?category_id=3"
+                                    data-id="3"
+                                    dada-slug="electronics-accessories"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >Electronics &amp; Accessories</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Electronics
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/19?category_id=3&amp;subcategory_id=6&amp;minicategory_id=19"
+                                              >
+                                                Mobile &amp; Tablets
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/20?category_id=3&amp;subcategory_id=6&amp;minicategory_id=20"
+                                              >
+                                                Laptop &amp; Desktop
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/126?category_id=3&amp;subcategory_id=6&amp;minicategory_id=126"
+                                              >
+                                                Smart Watch &amp; VR
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/6/electronics?category_id=3&amp;subcategory_id=6"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Accessories
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/22?category_id=3&amp;subcategory_id=7&amp;minicategory_id=22"
+                                              >
+                                                Personal Systems
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/24?category_id=3&amp;subcategory_id=7&amp;minicategory_id=24"
+                                              >
+                                                Home &amp; Office
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/86?category_id=3&amp;subcategory_id=7&amp;minicategory_id=86"
+                                              >
+                                                Accessories
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/7/accessories?category_id=3&amp;subcategory_id=7"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Little Black Dress_64px1589177893.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/4/fashion-lifestyle?category_id=4"
+                                    data-id="4"
+                                    dada-slug="fashion-lifestyle"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >Fashion &amp; Lifestyle</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Fashion-Men
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/25?category_id=4&amp;subcategory_id=8&amp;minicategory_id=25"
+                                              >
+                                                Shoe
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/26?category_id=4&amp;subcategory_id=8&amp;minicategory_id=26"
+                                              >
+                                                Wallets
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/27?category_id=4&amp;subcategory_id=8&amp;minicategory_id=27"
+                                              >
+                                                Cloths
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/8/fashion-men?category_id=4&amp;subcategory_id=8"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Fashion-Women
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/28?category_id=4&amp;subcategory_id=9&amp;minicategory_id=28"
+                                              >
+                                                Bags
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/29?category_id=4&amp;subcategory_id=9&amp;minicategory_id=29"
+                                              >
+                                                Under garments
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/30?category_id=4&amp;subcategory_id=9&amp;minicategory_id=30"
+                                              >
+                                                Cloths
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/9/fashion-women?category_id=4&amp;subcategory_id=9"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Lifestyle-Men
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/31?category_id=4&amp;subcategory_id=10&amp;minicategory_id=31"
+                                              >
+                                                Watches
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/32?category_id=4&amp;subcategory_id=10&amp;minicategory_id=32"
+                                              >
+                                                Pen
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/33?category_id=4&amp;subcategory_id=10&amp;minicategory_id=33"
+                                              >
+                                                Sun glasses
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/10/lifestyle-men?category_id=4&amp;subcategory_id=10"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Lifestyle-Women
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/35?category_id=4&amp;subcategory_id=11&amp;minicategory_id=35"
+                                              >
+                                                Jewellery
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/36?category_id=4&amp;subcategory_id=11&amp;minicategory_id=36"
+                                              >
+                                                Watches
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/37?category_id=4&amp;subcategory_id=11&amp;minicategory_id=37"
+                                              >
+                                                Sun glasses
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/11/lifestyle-women?category_id=4&amp;subcategory_id=11"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Lifestyle - Both
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/70?category_id=4&amp;subcategory_id=20&amp;minicategory_id=70"
+                                              >
+                                                Clock
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/102?category_id=4&amp;subcategory_id=20&amp;minicategory_id=102"
+                                              >
+                                                Pen
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/103?category_id=4&amp;subcategory_id=20&amp;minicategory_id=103"
+                                              >
+                                                Pen
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/20/lifestyle-both?category_id=4&amp;subcategory_id=20"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Fashion Both
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/123?category_id=4&amp;subcategory_id=28&amp;minicategory_id=123"
+                                              >
+                                                Shoe
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/28/fashion-both?category_id=4&amp;subcategory_id=28"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Travels
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/124?category_id=4&amp;subcategory_id=29&amp;minicategory_id=124"
+                                              >
+                                                Travels Items
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/29/travels?category_id=4&amp;subcategory_id=29"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Vegetarian Food_64px1589177906.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/5/foods-groceries?category_id=5"
+                                    data-id="5"
+                                    dada-slug="foods-groceries"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >Foods &amp; Groceries</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Foods
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/40?category_id=5&amp;subcategory_id=12&amp;minicategory_id=40"
+                                              >
+                                                Dry Foods
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/41?category_id=5&amp;subcategory_id=12&amp;minicategory_id=41"
+                                              >
+                                                Sweets
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/42?category_id=5&amp;subcategory_id=12&amp;minicategory_id=42"
+                                              >
+                                                Homemade Foods
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/12/foods?category_id=5&amp;subcategory_id=12"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Groceries
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/45?category_id=5&amp;subcategory_id=13&amp;minicategory_id=45"
+                                              >
+                                                Cooking Foods
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/46?category_id=5&amp;subcategory_id=13&amp;minicategory_id=46"
+                                              >
+                                                Grains, Beans &amp; Pulses
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/47?category_id=5&amp;subcategory_id=13&amp;minicategory_id=47"
+                                              >
+                                                Cooking Ingredients
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/13/groceries?category_id=5&amp;subcategory_id=13"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Fresh Daily
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/48?category_id=5&amp;subcategory_id=14&amp;minicategory_id=48"
+                                              >
+                                                Fruits &amp; Vegetables
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/49?category_id=5&amp;subcategory_id=14&amp;minicategory_id=49"
+                                              >
+                                                Egg, Fish &amp; Meats
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/14/fresh-daily?category_id=5&amp;subcategory_id=14"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Hair Dryer_64px1589177980.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/6/health-beauties?category_id=6"
+                                    data-id="6"
+                                    dada-slug="health-beauties"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >Health &amp; Beauties</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Health - Men &amp; Women
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/71?category_id=6&amp;subcategory_id=21&amp;minicategory_id=71"
+                                              >
+                                                Gym Items
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/72?category_id=6&amp;subcategory_id=21&amp;minicategory_id=72"
+                                              >
+                                                Health Supplement
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/73?category_id=6&amp;subcategory_id=21&amp;minicategory_id=73"
+                                              >
+                                                Digital Accessories
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/21/health-men-women?category_id=6&amp;subcategory_id=21"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Beauties - Women
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/77?category_id=6&amp;subcategory_id=23&amp;minicategory_id=77"
+                                              >
+                                                Accessories
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/78?category_id=6&amp;subcategory_id=23&amp;minicategory_id=78"
+                                              >
+                                                Bathroom needs
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/79?category_id=6&amp;subcategory_id=23&amp;minicategory_id=79"
+                                              >
+                                                Genital cleanliness
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/23/beauties-women?category_id=6&amp;subcategory_id=23"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Beauties - Men
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/80?category_id=6&amp;subcategory_id=24&amp;minicategory_id=80"
+                                              >
+                                                Cosmetic
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/81?category_id=6&amp;subcategory_id=24&amp;minicategory_id=81"
+                                              >
+                                                Accessories
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/82?category_id=6&amp;subcategory_id=24&amp;minicategory_id=82"
+                                              >
+                                                Bathroom needs
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/24/beauties-men?category_id=6&amp;subcategory_id=24"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Interior_64px1589178001.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/7/home-decors?category_id=7"
+                                    data-id="7"
+                                    dada-slug="home-decors"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >Home &amp; Decors</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Home
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/58?category_id=7&amp;subcategory_id=17&amp;minicategory_id=58"
+                                              >
+                                                Bedrooms
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/59?category_id=7&amp;subcategory_id=17&amp;minicategory_id=59"
+                                              >
+                                                Drawing Rooms
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/60?category_id=7&amp;subcategory_id=17&amp;minicategory_id=60"
+                                              >
+                                                Kitchens
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/17/home?category_id=7&amp;subcategory_id=17"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Office
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/62?category_id=7&amp;subcategory_id=18&amp;minicategory_id=62"
+                                              >
+                                                Boss Room
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/63?category_id=7&amp;subcategory_id=18&amp;minicategory_id=63"
+                                              >
+                                                Front Office
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/64?category_id=7&amp;subcategory_id=18&amp;minicategory_id=64"
+                                              >
+                                                Executives
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/18/office?category_id=7&amp;subcategory_id=18"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+
+                                <li role="separator" class="divider"></li>
+
+                                <li
+                                  class="dropdown mega-dropdown category-link"
+                                >
+                                  <img
+                                    src="https://www.jaragroups.com/storage/images/category/Shopping Bag_64px1589781578.png"
+                                    height="16px"
+                                    width="16px"
+                                    style="display: inline-block"
+                                  />
+                                  &nbsp;&nbsp;
+                                  <a
+                                    href="https://www.jaragroups.com/product-by-category/8/on-demand?category_id=8"
+                                    data-id="8"
+                                    dada-slug="on-demand"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    style="display: inline-block"
+                                    >On Demand</a
+                                  >
+
+                                  <div
+                                    class="dropdown-menu mega-dropdown-menu mega-styl2"
+                                    style="
+                                      margin-top: 0px;
+                                      margin-left: 50px;
+                                      border: 1px solid #ef4416;
+                                      width: 800px;
+                                    "
+                                  >
+                                    <div class="row">
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Products
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/90?category_id=8&amp;subcategory_id=25&amp;minicategory_id=90"
+                                              >
+                                                Food
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/91?category_id=8&amp;subcategory_id=25&amp;minicategory_id=91"
+                                              >
+                                                Craft
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/92?category_id=8&amp;subcategory_id=25&amp;minicategory_id=92"
+                                              >
+                                                Fresh
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/25/products?category_id=8&amp;subcategory_id=25"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-sm-4">
+                                        <div class="sub-list">
+                                          <h2 class="blk-clr title">
+                                            <b class="extbold-font-4 fsz-16">
+                                              Services
+                                            </b>
+                                          </h2>
+                                          <ul>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/94?category_id=8&amp;subcategory_id=26&amp;minicategory_id=94"
+                                              >
+                                                Home
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/95?category_id=8&amp;subcategory_id=26&amp;minicategory_id=95"
+                                              >
+                                                Office
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-minicategory/96?category_id=8&amp;subcategory_id=26&amp;minicategory_id=96"
+                                              >
+                                                Individual
+                                              </a>
+                                            </li>
+                                            <li
+                                              role="separator"
+                                              class="divider"
+                                            ></li>
+                                            <li>
+                                              <a
+                                                href="https://www.jaragroups.com/product-by-subcategory/26/services?category_id=8&amp;subcategory_id=26"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+              <div class="pull-right srch-box">
+                <a
+                  id="open-popup-search"
+                  class="header-link-search"
+                  href="javascript:void(0)"
+                  title="Search"
+                >
+                  <i class="fa fa-search"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- / HEADER -->
+
+    <!-- CONTENT + SIDEBAR -->
+    <div class="main-wrapper clearfix">
+      <div class="site-pagetitle jumbotron">
+        <div class="container theme-container text-center">
+          <h3>Dada <span class="thm-clr">Vaai</span></h3>
+
+          <!-- Breadcrumbs -->
+          <div class="breadcrumbs">
+            <div class="breadcrumbs text-center">
+              <i class="fa fa-home"></i>
+              <span><a href="index.html">Home</a></span>
+              <i class="fa fa-arrow-circle-right"></i>
+
+              <span><a href="#">Product</a></span>
+              <i class="fa fa-arrow-circle-right"></i>
+
+              <span><a href="#">Payment Page</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Start -->
+      <div class="theme-container container">
+        <!-- Title -->
+        <div
+          class="fancy-heading text-center"
+          style="margin-top: 5rem; margin-bottom: 3rem"
+        >
+          <h3 class="blk-clr">Payment Information</h3>
+        </div>
+        <!-- Content Area Start -->
+        <div class="row border payment_content-area" style="margin: 3rem">
+          <div class="col-lg-12">
+            <div>
+              <!-- Top Row -->
+              <div class="row" style="display: flex; align-items: center">
+                <div class="col-lg-4 text-center">
+                  <span>Order Date: </span>
+                  <span class="thm-clr">2 Aug 2023</span>
+                </div>
+                <div class="col-lg-4 text-center">
+                  <div class="payment-status-top">
+                    Payment Status :
+                    <span class="badge badge-success">Paid</span>
+                    <span class="badge badge-error">Unpaid</span>
+                  </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                  <div class="payment_modal_area text-center text-center">
+                    Order Items :
+                    <div
+                      class="payment-page-top"
+                      style="margin-right: 0.5rem; margin-left: 1rem"
+                    >
+                      <button
+                        class="submit"
+                        data-toggle="modal"
+                        data-target="#order-item"
+                      >
+                        <i class="fa fa-eye-slash"></i>
+                      </button>
+                    </div>
+                    <div class="payment-page-top">
+                      <button class="submit2" tooltip="Ordering Item : 5pcs">
+                        <i class="fa fa-info-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <!-- Top Second Row -->
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul>
+                    <li>Invoice Number : <span class="thm-clr">#556</span></li>
+                    <li>
+                      Client Name : <span class="thm-clr">Russel Hassan</span>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="col-lg-6"
+                  style="display: flex; justify-content: end; text-align: end"
+                >
+                  <ul class="">
+                    <li class="text-end">
+                      Total Payable : <span class="thm-clr"> $ 568</span>
+                    </li>
+                    <li class="text-end">
+                      Order Quantity : <span class="thm-clr">5</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="separation-line"></div>
+              <div class="row" style="position: relative; top: 2rem">
+                <div class="col-lg-2">
+                  <div class="tabCollapse v-tabs">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li role="presentation" class="active">
+                        <a
+                          href="#paypal"
+                          aria-controls="paypal"
+                          role="tab"
+                          data-toggle="tab"
+                          >Paypal</a
+                        >
+                      </li>
+                      <li role="presentation">
+                        <a
+                          href="#stripe"
+                          aria-controls="stripe"
+                          role="tab"
+                          data-toggle="tab"
+                          >Stripe</a
+                        >
+                      </li>
+                    </ul>
+                    <!-- Tab panes -->
+                  </div>
+                </div>
+                <div class="col-lg-10" style="padding: 0px">
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="paypal">
+                      <div
+                        class="screen flex-center"
+                        style="padding-bottom: 2rem"
+                      >
+                        <form class="popup flex p-lg">
+                          <div class="close-btn pointer flex-center p-sm">
+                            <i class="ai-cross"></i>
+                          </div>
+                          <!-- CARD FORM -->
+                          <div class="flex-fill flex-vertical">
+                            <div
+                              class="header flex-between flex-vertical-center"
+                            >
+                              <div class="flex-vertical-center">
+                                <i
+                                  class="ai-bitcoin-fill size-xl pr-sm f-main-color"
+                                ></i>
+                                <span class="title">
+                                  <strong>Paypal</strong><span>Pay</span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="card-data flex-vertical">
+                              <!-- Card Number -->
+                              <div class="flex-between flex-vertical-center">
+                                <div class="card-property-title">
+                                  <strong>Card Number</strong>
+                                  <span
+                                    >Enter 16-digit card number on the
+                                    card</span
+                                  >
+                                </div>
+                              </div>
+
+                              <!-- Card Field -->
+                              <div class="flex-between">
+                                <div
+                                  class="card-number flex-vertical-center flex-fill"
+                                >
+                                  <div
+                                    class="card-number-field flex-vertical-center flex-fill"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 48 48"
+                                      width="24px"
+                                      height="24px"
+                                    >
+                                      <path
+                                        fill="#ff9800"
+                                        d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+                                      />
+                                      <path
+                                        fill="#d50000"
+                                        d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+                                      />
+                                      <path
+                                        fill="#ff3d00"
+                                        d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
+                                      />
+                                    </svg>
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      min="1"
+                                      max="9999"
+                                      placeholder="0000"
+                                    />-
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      placeholder="0000"
+                                    />-
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      placeholder="0000"
+                                    />-
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      placeholder="0000"
+                                      data-bound="carddigits_mock"
+                                      data-def="0000"
+                                    />
+                                  </div>
+                                  <i
+                                    class="ai-circle-check-fill size-lg f-main-color"
+                                  ></i>
+                                </div>
+                              </div>
+
+                              <!-- Expiry Date -->
+                              <div class="flex-between">
+                                <div class="card-property-title">
+                                  <strong>Expiry Date</strong>
+                                  <span
+                                    >Enter the expiration date of the card</span
+                                  >
+                                </div>
+                                <div
+                                  class="card-property-value flex-vertical-center"
+                                >
+                                  <div class="input-container half-width">
+                                    <input
+                                      class="numbers form-control form-control-sm"
+                                      data-bound="mm_mock"
+                                      data-def="00"
+                                      type="number"
+                                      min="1"
+                                      max="12"
+                                      step="1"
+                                      placeholder="MM"
+                                    />
+                                  </div>
+                                  <span class="m-md">/</span>
+                                  <div class="input-container half-width">
+                                    <input
+                                      class="numbers form-control form-control-sm"
+                                      data-bound="yy_mock"
+                                      data-def="01"
+                                      type="number"
+                                      min="23"
+                                      max="99"
+                                      step="1"
+                                      placeholder="YY"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- CCV Number -->
+                              <div class="flex-between">
+                                <div class="card-property-title">
+                                  <strong>CVC Number</strong>
+                                  <span>Enter card verification code</span>
+                                </div>
+                                <div class="card-property-value">
+                                  <div class="input-container">
+                                    <input id="cvc" type="text" />
+                                    <i
+                                      id="cvc_toggler"
+                                      data-target="cvc"
+                                      class="ai-eye-open pointer"
+                                    ></i>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Name -->
+                              <div class="flex-between">
+                                <div class="card-property-title">
+                                  <strong>Cardholder Name</strong>
+                                  <span>Enter cardholder's name</span>
+                                </div>
+                                <div class="card-property-value">
+                                  <div class="input-container">
+                                    <input
+                                      id="name"
+                                      data-bound="name_mock"
+                                      data-def="Mr. Cardholder"
+                                      type="text"
+                                      class="uppercase"
+                                      placeholder="CARDHOLDER NAME"
+                                    />
+                                    <i class="ai-person"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- SIDEBAR -->
+                          <div class="sidebar flex-vertical">
+                            <div class="purchase-section flex-vertical">
+                              <div class="card-mockup flex-vertical">
+                                <div class="flex-fill flex-between">
+                                  <i
+                                    class="ai-bitcoin-fill size-xl f-secondary-color"
+                                  ></i>
+                                  <i
+                                    class="ai-wifi size-lg f-secondary-color"
+                                  ></i>
+                                </div>
+                                <div>
+                                  <div
+                                    id="name_mock"
+                                    class="size-md pb-sm uppercase ellipsis"
+                                  >
+                                    mr. Cardholder
+                                  </div>
+                                  <div class="size-md pb-md">
+                                    <strong>
+                                      <span class="pr-sm">
+                                        &#x2022;&#x2022;&#x2022;&#x2022;
+                                      </span>
+                                      <span id="carddigits_mock">0000</span>
+                                    </strong>
+                                  </div>
+                                  <div
+                                    class="flex-between flex-vertical-center"
+                                  >
+                                    <strong class="size-md">
+                                      <span id="mm_mock">00</span>/<span
+                                        id="yy_mock"
+                                        >01</span
+                                      >
+                                    </strong>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 48 48"
+                                      width="24px"
+                                      height="24px"
+                                    >
+                                      <path
+                                        fill="#ff9800"
+                                        d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+                                      />
+                                      <path
+                                        fill="#d50000"
+                                        d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+                                      />
+                                      <path
+                                        fill="#ff3d00"
+                                        d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <ul class="purchase-props">
+                                <li class="flex-between">
+                                  <span>Company</span>
+                                  <strong>Apple</strong>
+                                </li>
+                                <li class="flex-between">
+                                  <span>Order number</span>
+                                  <strong>429252965</strong>
+                                </li>
+                                <li class="flex-between">
+                                  <span>Product</span>
+                                  <strong>MacBook Air</strong>
+                                </li>
+                                <li class="flex-between">
+                                  <span>VAT (20%)</span>
+                                  <strong>$100.00</strong>
+                                </li>
+                              </ul>
+                            </div>
+
+                            <div class="separation-line"></div>
+                            <div
+                              class="total-section flex-between flex-vertical-center"
+                            >
+                              <div class="flex-fill flex-vertical">
+                                <div class="total-label f-secondary-color">
+                                  You have to Pay
+                                </div>
+                                <div>
+                                  <strong>549</strong>
+                                  <small
+                                    >.99
+                                    <span class="f-secondary-color"
+                                      >USD</span
+                                    ></small
+                                  >
+                                </div>
+                              </div>
+                              <i class="ai-coin size-lg"></i>
+                            </div>
+                            <div
+                              class="action flex-center"
+                              style="padding-top: 2rem"
+                            >
+                              <a
+                                type="submit"
+                                href="#"
+                                class="fancy-btn fancy-btn-small"
+                                >Pay Now</a
+                              >
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="stripe">
+                      <div
+                        class="screen flex-center"
+                        style="padding-bottom: 2rem"
+                      >
+                        <form class="popup flex p-lg">
+                          <div class="close-btn pointer flex-center p-sm">
+                            <i class="ai-cross"></i>
+                          </div>
+                          <!-- CARD FORM -->
+                          <div class="flex-fill flex-vertical">
+                            <div
+                              class="header flex-between flex-vertical-center"
+                            >
+                              <div class="flex-vertical-center">
+                                <i
+                                  class="ai-bitcoin-fill size-xl pr-sm f-main-color"
+                                ></i>
+                                <span class="title">
+                                  <strong>Stripe</strong><span>Pay</span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="card-data flex-vertical">
+                              <!-- Card Number -->
+                              <div class="flex-between flex-vertical-center">
+                                <div class="card-property-title">
+                                  <strong>Card Number</strong>
+                                  <span
+                                    >Enter 16-digit card number on the
+                                    card</span
+                                  >
+                                </div>
+                              </div>
+
+                              <!-- Card Field -->
+                              <div class="flex-between">
+                                <div
+                                  class="card-number flex-vertical-center flex-fill"
+                                >
+                                  <div
+                                    class="card-number-field flex-vertical-center flex-fill"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 48 48"
+                                      width="24px"
+                                      height="24px"
+                                    >
+                                      <path
+                                        fill="#ff9800"
+                                        d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+                                      />
+                                      <path
+                                        fill="#d50000"
+                                        d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+                                      />
+                                      <path
+                                        fill="#ff3d00"
+                                        d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
+                                      />
+                                    </svg>
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      min="1"
+                                      max="9999"
+                                      placeholder="0000"
+                                    />-
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      placeholder="0000"
+                                    />-
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      placeholder="0000"
+                                    />-
+                                    <input
+                                      class="numbers"
+                                      type="number"
+                                      placeholder="0000"
+                                      data-moc="carddigits_mock2"
+                                      data-doc="0000"
+                                    />
+                                  </div>
+                                  <i
+                                    class="ai-circle-check-fill size-lg f-main-color"
+                                  ></i>
+                                </div>
+                              </div>
+
+                              <!-- Expiry Date -->
+                              <div class="flex-between">
+                                <div class="card-property-title">
+                                  <strong>Expiry Date</strong>
+                                  <span
+                                    >Enter the expiration date of the card</span
+                                  >
+                                </div>
+                                <div
+                                  class="card-property-value flex-vertical-center"
+                                >
+                                  <div class="input-container half-width">
+                                    <input
+                                      class="numbers form-control form-control-sm"
+                                      data-moc="mm_mock2"
+                                      data-doc="00"
+                                      type="number"
+                                      min="1"
+                                      max="12"
+                                      step="1"
+                                      placeholder="MM"
+                                    />
+                                  </div>
+                                  <span class="m-md">/</span>
+                                  <div class="input-container half-width">
+                                    <input
+                                      class="numbers form-control form-control-sm"
+                                      data-moc="yy_mock2"
+                                      data-doc="01"
+                                      type="number"
+                                      min="23"
+                                      max="99"
+                                      step="1"
+                                      placeholder="YY"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- CCV Number -->
+                              <div class="flex-between">
+                                <div class="card-property-title">
+                                  <strong>CVC Number</strong>
+                                  <span>Enter card verification code</span>
+                                </div>
+                                <div class="card-property-value">
+                                  <div class="input-container">
+                                    <input id="cvc" type="text" />
+                                    <i
+                                      id="cvc_toggler_stripe"
+                                      data-target="cvc"
+                                      class="ai-eye-open pointer"
+                                    ></i>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Name -->
+                              <div class="flex-between">
+                                <div class="card-property-title">
+                                  <strong>Cardholder Name</strong>
+                                  <span>Enter cardholder's name</span>
+                                </div>
+                                <div class="card-property-value">
+                                  <div class="input-container">
+                                    <input
+                                      id="name"
+                                      data-moc="name_mock2"
+                                      data-doc="Mr. Cardholder"
+                                      type="text"
+                                      class="uppercase"
+                                      placeholder="CARDHOLDER NAME"
+                                    />
+                                    <i class="ai-person"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- SIDEBAR -->
+                          <div class="sidebar flex-vertical">
+                            <div class="purchase-section flex-vertical">
+                              <div class="card-mockup flex-vertical">
+                                <div class="flex-fill flex-between">
+                                  <i
+                                    class="ai-bitcoin-fill size-xl f-secondary-color"
+                                  ></i>
+                                  <i
+                                    class="ai-wifi size-lg f-secondary-color"
+                                  ></i>
+                                </div>
+                                <div>
+                                  <div
+                                    id="name_mock2"
+                                    class="size-md pb-sm uppercase ellipsis"
+                                  >
+                                    mr. Cardholder
+                                  </div>
+                                  <div class="size-md pb-md">
+                                    <strong>
+                                      <span class="pr-sm">
+                                        &#x2022;&#x2022;&#x2022;&#x2022;
+                                      </span>
+                                      <span id="carddigits_mock2">0001</span>
+                                    </strong>
+                                  </div>
+                                  <div
+                                    class="flex-between flex-vertical-center"
+                                  >
+                                    <strong class="size-md">
+                                      <span id="mm_mock2">00</span>/<span
+                                        id="yy_mock2"
+                                        >01</span
+                                      >
+                                    </strong>
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 48 48"
+                                      width="24px"
+                                      height="24px"
+                                    >
+                                      <path
+                                        fill="#ff9800"
+                                        d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+                                      />
+                                      <path
+                                        fill="#d50000"
+                                        d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+                                      />
+                                      <path
+                                        fill="#ff3d00"
+                                        d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <ul class="purchase-props">
+                                <li class="flex-between">
+                                  <span>Company</span>
+                                  <strong>Apple</strong>
+                                </li>
+                                <li class="flex-between">
+                                  <span>Order number</span>
+                                  <strong>429252965</strong>
+                                </li>
+                                <li class="flex-between">
+                                  <span>Product</span>
+                                  <strong>MacBook Air</strong>
+                                </li>
+                                <li class="flex-between">
+                                  <span>VAT (20%)</span>
+                                  <strong>$100.00</strong>
+                                </li>
+                              </ul>
+                            </div>
+
+                            <div class="separation-line"></div>
+                            <div
+                              class="total-section flex-between flex-vertical-center"
+                            >
+                              <div class="flex-fill flex-vertical">
+                                <div class="total-label f-secondary-color">
+                                  You have to Pay
+                                </div>
+                                <div>
+                                  <strong>549</strong>
+                                  <small
+                                    >.99
+                                    <span class="f-secondary-color"
+                                      >USD</span
+                                    ></small
+                                  >
+                                </div>
+                              </div>
+                              <i class="ai-coin size-lg"></i>
+                            </div>
+                            <div
+                              class="action flex-center"
+                              style="padding-top: 2rem"
+                            >
+                              <a
+                                type="submit"
+                                href="#"
+                                class="fancy-btn fancy-btn-small"
+                                >Pay Now</a
+                              >
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Content Area End -->
+      </div>
+      <!-- Main Content End -->
+      <!--order-item Modal -->
+      <div id="order-item" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <button
+              type="button"
+              class="close close-btn popup-cls"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="fa-times fa"></i>
+            </button>
+            <div class="">
+              <div class="login-wrap">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <!-- Modal Content -->
+                    <div class="fancy-heading text-center">
+                      <h3>Order <span class="thm-clr">Item</span></h3>
+                      <h5 class="funky-font-2">Your Order Items</h5>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead
+                          class="text-white"
+                          style="background-color: #ef5350"
+                        >
+                          <tr>
+                            <th width="10%">Img</th>
+                            <th width="50%">Product Name</th>
+                            <th width="10%">Price</th>
+                            <th width="10%">Quantity</th>
+                            <th width="20%" class="text-center">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">
+                              <img
+                                src="https://t4.ftcdn.net/jpg/01/43/23/83/360_F_143238306_lh0ap42wgot36y44WybfQpvsJB5A1CHc.jpg"
+                                alt=""
+                                style="
+                                  width: 24px;
+                                  height: 24px;
+                                  border-radius: 50%;
+                                "
+                              />
+                            </th>
+                            <td>Table cell</td>
+                            <td class="text-center">$568</td>
+                            <td class="text-center">5</td>
+                            <td class="text-center">55568</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              <img
+                                src="https://t4.ftcdn.net/jpg/01/43/23/83/360_F_143238306_lh0ap42wgot36y44WybfQpvsJB5A1CHc.jpg"
+                                alt=""
+                                style="
+                                  width: 24px;
+                                  height: 24px;
+                                  border-radius: 50%;
+                                "
+                              />
+                            </th>
+                            <td>Table cell</td>
+                            <td class="text-center">$568</td>
+                            <td class="text-center">5</td>
+                            <td class="text-center">55568</td>
+                          </tr>
+
+                          <tr class="text-center">
+                            <td colspan="2"></td>
+                            <td colspan="2" class="text-black">Subtotal</td>
+                            <td>$56</td>
+                          </tr>
+                          <tr class="text-center">
+                            <td colspan="2"></td>
+                            <td colspan="2" class="text-black">Tax</td>
+                            <td>$56</td>
+                          </tr>
+                          <tr class="text-center">
+                            <td colspan="2"></td>
+                            <td colspan="2" class="text-black">Grand Total</td>
+                            <td>$56</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- Modal Content End-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--order-item Modal End -->
+      <div class="clear"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+      class="site-footer clearfix"
+      itemscope
+      itemtype="https://schema.org/WPFooter"
+    >
+      <div class="site-main-footer container theme-container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 clearfix">
+            <section class="widget footer-widget widget_text clearfix">
+              <div class="textwidget">
+                <p class="fsz-35">
+                  <span class="bold-font-3 wht-clr">GoShop</span>
+                  <span class="thm-clr funky-font">bikes</span>
+                </p>
+                <p>ECommerce HTML Template</p>
+                <div class="author-info-social">
+                  <a
+                    class="goshop-share rcc-google"
+                    href="http://google.com"
+                    rel="nofollow"
+                    target="_blank"
+                  >
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                  <a
+                    class="goshop-share rcc-twitter"
+                    href="http://twitter.com"
+                    rel="nofollow"
+                    target="_blank"
+                  >
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a
+                    class="goshop-share rcc-facebook"
+                    href="http://facebook.com"
+                    rel="nofollow"
+                    target="_blank"
+                  >
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a
+                    class="goshop-share rcc-linkedin"
+                    href="http://linkedin.com"
+                    rel="nofollow"
+                    target="_blank"
+                  >
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a
+                    class="goshop-share rcc-pinterest"
+                    href="http://pinterest.com"
+                    rel="nofollow"
+                    target="_blank"
+                  >
+                    <i class="fa fa-pinterest-p"></i>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-md-3 col-sm-6 clearfix">
+            <section class="widget footer-widget widget_nav_menu clearfix">
+              <h6 class="widget-title">My Account</h6>
+              <ul>
+                <li class="menu-item"><a href="#">Personal Information</a></li>
+                <li class="menu-item"><a href="#">Address</a></li>
+                <li class="menu-item"><a href="#">Discount</a></li>
+                <li class="menu-item"><a href="#">Order History</a></li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="col-md-3 col-sm-6 clearfix">
+            <section
+              id="nav_menu-3"
+              class="widget footer-widget widget_nav_menu clearfix"
+            >
+              <h6 class="widget-title">Our Services</h6>
+              <ul>
+                <li class="menu-item"><a href="#">Shipping Return</a></li>
+                <li class="menu-item">
+                  <a href="#">International Shipping</a>
+                </li>
+                <li class="menu-item"><a href="#">Secure Shopping</a></li>
+                <li class="menu-item"><a href="#">Affiliates</a></li>
+                <li class="menu-item"><a href="#">F.A.Q</a></li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="col-md-3 col-sm-6 clearfix">
+            <section
+              id="text-6"
+              class="widget footer-widget widget_text clearfix"
+            >
+              <h6 class="widget-title">Newsletter</h6>
+              <div class="textwidget">
+                Lorem ipsum dolor sit amet conseret adipiscing elit sed diam
+                nonunem.
+                <form class="mc4wp-form">
+                  <p>
+                    <label>Email address: </label>
+                    <input
+                      type="email"
+                      name="EMAIL"
+                      placeholder="Your email address"
+                      required
+                    />
+                  </p>
+
+                  <p>
+                    <button class="submit">
+                      <i class="fa fa-envelope-o"></i>
+                    </button>
+                  </p>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="post-footer">
+          <div class="payment-systems text-center">
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-1.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-2.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-3.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-4.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-5.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-6.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-7.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-8.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-1.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-2.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-5.png" alt=""
+              /></a>
+            </div>
+            <div class="item">
+              <a href="#"
+                ><img src="assets/img/extra/payment-3.png" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subfooter text-center">
+        <div class="container theme-container">
+          <p>
+            Copyright &copy; <a href="#" class="thm-clr">jThemes Studio</a>. All
+            Right Reserved 2015
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Search Popup -->
+    <div class="popup-box page-search-box">
+      <div>
+        <div class="popup-box-inner">
+          <form>
+            <input
+              class="search-query"
+              type="text"
+              placeholder="Search and hit enter"
+            />
+          </form>
+        </div>
+      </div>
+      <a href="javascript:void(0)" class="close-popup-box close-page-search"
+        ><i class="fa fa-close"></i
+      ></a>
+    </div>
+    <!-- / Search Popup -->
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close close-btn popup-cls"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="fa-times fa"></i>
+          </button>
+          <div class="">
+            <div class="login-wrap text-center">
+              <div id="review-block" class="row" style="margin-top: 40px">
+                <div class="col-lg-12 col-md-8">
+                  <div class="well well-sm">
+                    <div class="row" id="post-review-box">
+                      <div class="col-md-12">
+                        <form
+                          class="form"
+                          id="review-form"
+                          action="#"
+                          method="post"
+                        >
+                          <div class="form-group">
+                            <input
+                              class="form-control"
+                              id="product_id-hidden"
+                              name="product_id"
+                              type="hidden"
+                              value="714"
+                            />
+                            <input
+                              class="form-control"
+                              id="ratings-hidden"
+                              name="rating"
+                              type="hidden"
+                            />
+
+                            <div
+                              style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                              "
+                            >
+                              <div
+                                class="text-left"
+                                style="margin: 20px 0; margin-left: 5px"
+                              >
+                                <strong>Your rate and review</strong>
+                              </div>
+                              <div class="rate" style="margin-left: 1rem">
+                                <input
+                                  type="radio"
+                                  id="star5"
+                                  name="rate"
+                                  value="5"
+                                />
+                                <label for="star5" title="text">5 stars</label>
+                                <input
+                                  type="radio"
+                                  id="star4"
+                                  name="rate"
+                                  value="4"
+                                />
+                                <label for="star4" title="text">4 stars</label>
+                                <input
+                                  type="radio"
+                                  id="star3"
+                                  name="rate"
+                                  value="3"
+                                />
+                                <label for="star3" title="text">3 stars</label>
+                                <input
+                                  type="radio"
+                                  id="star2"
+                                  name="rate"
+                                  value="2"
+                                />
+                                <label for="star2" title="text">2 stars</label>
+                                <input
+                                  type="radio"
+                                  id="star1"
+                                  name="rate"
+                                  value="1"
+                                />
+                                <label for="star1" title="text">1 star</label>
+                              </div>
+                              <a
+                                class="btn btn-danger btn-sm"
+                                href="#"
+                                id="close-review-box"
+                                style="display: none; margin-right: 10px"
+                              >
+                                <span class="glyphicon glyphicon-remove"></span
+                                >Cancel</a
+                              >
+                            </div>
+                            <textarea
+                              class="form-control animated"
+                              cols="50"
+                              id="new_review"
+                              name="comment"
+                              placeholder="Enter your review here..."
+                              rows="5"
+                            ></textarea>
+                            <br />
+                            <button
+                              class="fancy-btn fancy-btn-small"
+                              type="submit"
+                            >
+                              Send
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top -->
+    <div class="to-top" id="to-top"><i class="fa fa-long-arrow-up"></i></div>
+
+    <!-- JS Global -->
+    <script src="assets/plugins/jquery/jquery-2.1.3.js"></script>
+    <script src="assets/plugins/royalslider/jquery.royalslider.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap-select-1.9.3/dist/js/bootstrap-select.min.js"></script>
+    <script src="assets/plugins/owl-carousel2/owl.carousel.min.js"></script>
+    <script src="assets/plugins/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/plugins/isotope-master/dist/isotope.pkgd.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="assets/js/jquery.sticky.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      document.addEventListener("input", (event) => {
+        const bounds = document.querySelectorAll("[data-bound]");
+
+        for (const bound of bounds) {
+          if (bound === event.target) {
+            const targetId = bound.getAttribute("data-bound");
+            const defValue = bound.getAttribute("data-def");
+
+            const targetEl = document.getElementById(targetId);
+
+            targetEl.innerText = bound.value || defValue;
+          }
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("input", (event) => {
+        const elements = document.querySelectorAll("[data-moc]");
+
+        for (const element of elements) {
+          if (element === event.target) {
+            const targetId = element.getAttribute("data-moc");
+            const defValue = element.getAttribute("data-doc");
+            const targetEl = document.getElementById(targetId);
+            targetEl.innerText = element.value || defValue;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+
+[class*=flag-] {
+    background-image: url(https://img.virtual-expo.com/media/ps/images/common/flags/flags-icons.png);
+    display: inline-block;
+    background-repeat: no-repeat
+}
+
+.flag-16 {
+    width: 16px;
+    height: 11px
+}
+
+.flag-16.en {
+    background-position: 0 0
+}
+
+.flag-16.de {
+    background-position: 0 -20px
+}
+
+.flag-16.fr {
+    background-position: 0 -40px
+}
+
+.flag-16.es {
+    background-position: 0 -60px
+}
+
+.flag-16.it {
+    background-position: 0 -80px
+}
+
+.flag-16.zh {
+    background-position: 0 -100px
+}
+
+.flag-16.ja {
+    background-position: 0 -120px
+}
+
+.flag-16.ru {
+    background-position: 0 -140px
+}
+
+.flag-16.pt {
+    background-position: 0 -160px
+}
+
+
+.flag-24 {
+    width: 22px;
+    height: 16px
+}
+
+.flag-24.en {
+    background-position: 0 -181px
+}
+
+.flag-24.de {
+    background-position: 0 -201px
+}
+
+.flag-24.fr {
+    background-position: 0 -221px
+}
+
+.flag-24.es {
+    background-position: 0 -241px
+}
+
+.flag-24.it {
+    background-position: 0 -261px
+}
+
+.flag-24.zh {
+    background-position: 0 -281px
+}
+
+.flag-24.ja {
+    background-position: 0 -301px
+}
+
+.flag-24.ru {
+    background-position: 0 -321px
+}
+
+.flag-24.pt {
+    background-position: 0 -341px
+}
+
+.flag-32 {
+    width: 30px;
+    height: 20px
+}
+
+.flag-32.en {
+    background-position: -32px 0
+}
+
+.flag-32.de {
+    background-position: -32px -30px
+}
+
+.flag-32.fr {
+    background-position: -32px -60px
+}
+
+.flag-32.es {
+    background-position: -32px -90px
+}
+
+.flag-32.it {
+    background-position: -32px -120px
+}
+
+.flag-32.zh {
+    background-position: -32px -150px
+}
+
+.flag-32.ja {
+    background-position: -32px -180px
+}
+
+.flag-32.ru {
+    background-position: -32px -210px
+}
+
+.flag-32.pt {
+    background-position: -32px -240px
+}
+
+.flag-48 {
+    width: 46px;
+    height: 32px
+}
+
+.flag-48.en {
+    background-position: -72px 0
+}
+
+.flag-48.de {
+    background-position: -72px -40px
+}
+
+.flag-48.fr {
+    background-position: -72px -80px
+}
+
+.flag-48.es {
+    background-position: -72px -120px
+}
+
+.flag-48.it {
+    background-position: -72px -160px
+}
+
+.flag-48.zh {
+    background-position: -72px -200px
+}
+
+.flag-48.ja {
+    background-position: -72px -240px
+}
+
+.flag-48.ru {
+    background-position: -72px -280px
+}
+
+.flag-48.pt {
+    background-position: -72px -320px
+}
+
+.flag-64 {
+    width: 60px;
+    height: 40px
+}
+
+.flag-64.en {
+    background-position: -128px 0
+}
+
+.flag-64.de {
+    background-position: -128px -50px
+}
+
+.flag-64.fr {
+    background-position: -128px -100px
+}
+
+.flag-64.es {
+    background-position: -128px -150px
+}
+
+.flag-64.it {
+    background-position: -128px -200px
+}
+
+.flag-64.zh {
+    background-position: -128px -250px
+}
+
+.flag-64.ja {
+    background-position: -128px -300px
+}
+
+.flag-64.ru {
+    background-position: -128px -350px
+}
+
+.flag-64.pt {
+    background-position: -128px -400px
+}
+
+.no-float {
+    float: none
+}
